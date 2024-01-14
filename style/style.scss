@@ -1,18 +1,358 @@
 //color & font
-$light : #f1f3f8;
-$medium : #c0c0c0;
-$dark : #393b44;
-$accent : #47555e;
+$light: #f1f3f8;
+$medium: #c0c0c0;
+$dark: #393b44;
+$accent: #47555e;
+$send: #008800;
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 //reset
-*{
+* {
   margin: 0;
   padding: 0;
-  border: none;
-  background: none;
+  text-decoration: none;
 }
 
-h1{
+a {
+  color: $light;
+}
+
+h1, h2 {
   font-family: 'Dancing Script', cursive;
+}
+
+//header & footer
+header, footer {
+  background: $accent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $light;
+
+  a {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    transition: all ease .5s;
+
+    &:hover {
+      box-shadow: 2px 2px 4px $light;
+    }
+
+    .icon-content {
+      margin-right: .5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        fill: $light;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+  width: 99.17vw;
+  padding: .2rem .5rem 1rem .5rem;
+
+  #link-home {
+    width: 5%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  #navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+
+    a {
+      padding: 0 .2rem .2rem .2rem;
+      border-bottom: 1px solid $light;
+
+      .icon-content {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 99.13vw;
+  justify-content: space-around;
+  padding: 1rem .5rem;
+
+  a {
+    font-size: 1.5rem;
+    padding: .2rem;
+
+    .icon-content {
+      width: 1.5rem;
+    }
+  }
+}
+
+//main
+main {
+  height: 86.9vh;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background: $light;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $accent;
+  }
+
+  section {
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    height: 86.9vh;
+  }
+}
+
+//home
+#home {
+  position: relative;
+
+  img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    color: $light;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 8rem;
+  }
+}
+
+//gallery
+#gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+
+      button {
+        border: 1px solid $dark;
+        border-radius: 10px;
+        padding: .5rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all ease .5s;
+      }
+
+      img {
+        border-radius: 10px;
+        transition: all ease .5s;
+        cursor: pointer;
+      }
+
+      &:hover {
+        button {
+          background: $dark;
+          color: $light;
+        }
+
+        img {
+          box-shadow: 4px 4px 4px $dark;
+        }
+      }
+    }
+  }
+}
+
+//tarif
+#tarif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  #tarif-contenu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+    .tarif-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      width: 100%;
+      padding-left: 5rem;
+
+      .tarif-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+
+        .icon-content {
+          width: 1.5rem;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          gap: .2rem;
+
+          .name-tarif {
+            &:before {
+              content: "«";
+            }
+
+            &:after {
+              content: "»";
+            }
+          }
+
+          .description-tarif {
+            font-size: 1.2rem;
+          }
+
+          .prix-tarif {
+            &:after {
+              content: '€';
+            }
+          }
+
+          .name-tarif, .prix-tarif, .devis {
+            font-size: 1.5rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+//contact
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: .5rem;
+    border: 1px solid $dark;
+    border-radius: 10px;
+    padding: .6rem;
+    box-shadow: 4px 4px 50px $dark;
+
+    span {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+
+      label {
+        &.required {
+          &:after {
+            content: '*';
+            color: red;
+          }
+        }
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+
+      &:before {
+        content: '*';
+        color: red;
+      }
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      padding: .5rem;
+      border: 1px solid $dark;
+      background: rgba($send, .5);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all ease .5s;
+      font-weight: bold;
+      font-size: 1.2rem;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+
+      .icon-content {
+        width: 1.2rem;
+        margin-right: .5rem;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &:hover {
+        box-shadow: 2px 2px 4px $send;
+      }
+    }
+  }
 }

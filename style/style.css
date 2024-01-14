@@ -1,13 +1,293 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 * {
   margin: 0;
   padding: 0;
-  border: none;
-  background: none;
+  text-decoration: none;
 }
 
-h1 {
+a {
+  color: #f1f3f8;
+}
+
+h1, h2 {
   font-family: "Dancing Script", cursive;
+}
+
+header, footer {
+  background: #47555e;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #f1f3f8;
+}
+header a, footer a {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  transition: all ease 0.5s;
+}
+header a:hover, footer a:hover {
+  box-shadow: 2px 2px 4px #f1f3f8;
+}
+header a .icon-content, footer a .icon-content {
+  margin-right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header a .icon-content svg, footer a .icon-content svg {
+  fill: #f1f3f8;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+  width: 99.17vw;
+  padding: 0.2rem 0.5rem 1rem 0.5rem;
+}
+header #link-home {
+  width: 5%;
+}
+header #link-home img {
+  width: 100%;
+}
+header #navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+}
+header #navbar a {
+  padding: 0 0.2rem 0.2rem 0.2rem;
+  border-bottom: 1px solid #f1f3f8;
+}
+header #navbar a .icon-content {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 99.13vw;
+  justify-content: space-around;
+  padding: 1rem 0.5rem;
+}
+footer a {
+  font-size: 1.5rem;
+  padding: 0.2rem;
+}
+footer a .icon-content {
+  width: 1.5rem;
+}
+
+main {
+  height: 86.9vh;
+  overflow: auto;
+}
+main::-webkit-scrollbar {
+  width: 6px;
+  background: #f1f3f8;
+}
+main::-webkit-scrollbar-thumb {
+  background: #47555e;
+}
+main section {
+  height: 86.9vh;
+}
+main section h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#home {
+  position: relative;
+}
+#home img {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+#home h1 {
+  width: 100%;
+  text-align: center;
+  color: #f1f3f8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 8rem;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#gallery div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+#gallery div .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+#gallery div .card button {
+  border: 1px solid #393b44;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all ease 0.5s;
+}
+#gallery div .card img {
+  border-radius: 10px;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+#gallery div .card:hover button {
+  background: #393b44;
+  color: #f1f3f8;
+}
+#gallery div .card:hover img {
+  box-shadow: 4px 4px 4px #393b44;
+}
+
+#tarif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#tarif #tarif-contenu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+#tarif #tarif-contenu .tarif-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 5rem;
+}
+#tarif #tarif-contenu .tarif-container .tarif-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+#tarif #tarif-contenu .tarif-container .tarif-card .icon-content {
+  width: 1.5rem;
+}
+#tarif #tarif-contenu .tarif-container .tarif-card .icon-content svg {
+  width: 100%;
+  height: 100%;
+}
+#tarif #tarif-contenu .tarif-container .tarif-card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.2rem;
+}
+#tarif #tarif-contenu .tarif-container .tarif-card .card-content .name-tarif:before {
+  content: "«";
+}
+#tarif #tarif-contenu .tarif-container .tarif-card .card-content .name-tarif:after {
+  content: "»";
+}
+#tarif #tarif-contenu .tarif-container .tarif-card .card-content .description-tarif {
+  font-size: 1.2rem;
+}
+#tarif #tarif-contenu .tarif-container .tarif-card .card-content .prix-tarif:after {
+  content: "€";
+}
+#tarif #tarif-contenu .tarif-container .tarif-card .card-content .name-tarif, #tarif #tarif-contenu .tarif-container .tarif-card .card-content .prix-tarif, #tarif #tarif-contenu .tarif-container .tarif-card .card-content .devis {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#contact form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #393b44;
+  border-radius: 10px;
+  padding: 0.6rem;
+  box-shadow: 4px 4px 50px #393b44;
+}
+#contact form span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+#contact form span label.required:after {
+  content: "*";
+  color: red;
+}
+#contact form p {
+  font-size: 1.1rem;
+}
+#contact form p:before {
+  content: "*";
+  color: red;
+}
+#contact form button {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  border: 1px solid #393b44;
+  background: rgba(0, 136, 0, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+#contact form button:first-letter {
+  text-transform: uppercase;
+}
+#contact form button .icon-content {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}
+#contact form button .icon-content svg {
+  width: 100%;
+  height: 100%;
+}
+#contact form button:hover {
+  box-shadow: 2px 2px 4px #008800;
 }
 
 /*# sourceMappingURL=style.css.map */
