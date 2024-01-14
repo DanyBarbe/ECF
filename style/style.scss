@@ -1,0 +1,18 @@
+//color & font
+$light : #f1f3f8;
+$medium : #c0c0c0;
+$dark : #393b44;
+$accent : #47555e;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+//reset
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+h1{
+  font-family: 'Dancing Script', cursive;
+}
