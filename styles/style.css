@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */
