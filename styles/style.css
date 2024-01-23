@@ -81,7 +81,7 @@ main {
 }
 main h2 {
   text-align: center;
-  font-size: xx-large;
+  font-size: 36px;
   margin-bottom: 0.5rem;
 }
 main::-webkit-scrollbar {
@@ -201,6 +201,89 @@ main#tarif #tarif-content .tarif-card .card-content .prix {
 }
 main#tarif #tarif-content .tarif-card .card-content .prix:after {
   content: "€";
+}
+main#contact {
+  position: relative;
+}
+main#contact form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #393b44;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px #393b44;
+  gap: 1rem;
+}
+main#contact form span:not(.text) {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+main#contact form span:not(.text) input, main#contact form span:not(.text) textarea {
+  border: 1px solid #393b44;
+  padding: 0.2rem;
+}
+main#contact form span:not(.text) textarea {
+  margin-left: 0.5rem;
+}
+main#contact form span:not(.text) label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.1rem;
+}
+main#contact form span:not(.text) label:after {
+  content: ":";
+  font-size: large;
+  margin-left: 0.5rem;
+}
+main#contact form .required {
+  font-size: large;
+  color: red;
+}
+main#contact form .text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+main#contact form .text p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main#contact form button {
+  background: #008800;
+  color: #f1f3f8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+main#contact form button:hover {
+  box-shadow: 2px 2px 4px #008800;
+  border-color: #f1f3f8;
+}
+main#contact form button .icon-content {
+  width: 1rem;
+  height: 1rem;
+}
+main#contact form button .icon-content svg {
+  fill: #f1f3f8;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
