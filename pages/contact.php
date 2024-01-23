@@ -53,7 +53,7 @@
 </main>
 
 <?php
-	include '../controller//header.html';
+	include '../controller/footer.html';
 ?>
 
 </body>

@@ -61,7 +61,7 @@ include '../controller/header.html';
 </main>
 
 <?php
-include '../controller/header.html';
+	include '../controller/footer.html';
 ?>
 </body>
 </html>
