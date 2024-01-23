@@ -5,6 +5,7 @@
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../styles/style.css">
 	<title>Charles Cantin - Photographe</title>
 </head>
 <body>
@@ -26,7 +27,7 @@ include '../controller/header.html';
 		<div class="card-gallery">
 			<h3>couple</h3>
 			<span class="image-content">
-				<img src="../assets/image/couple.jpg" alt="couple>
+				<img src="../assets/image/couple.jpg" alt="couple">
 			</span>
 		</div>
 		
@@ -40,7 +41,7 @@ include '../controller/header.html';
 		<div class="card-gallery">
 			<h3>bébé</h3>
 			<span class="image-content">
-				<img src="../assets/image/baby.jpg" alt="bébé>
+				<img src="../assets/image/baby.jpg" alt="bébé">
 			</span>
 		</div>
 		
