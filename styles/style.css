@@ -77,10 +77,11 @@ header #hamburger {
 main {
   height: 83.3vh;
   overflow: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+}
+main h2 {
+  text-align: center;
+  font-size: xx-large;
+  margin-bottom: 0.5rem;
 }
 main::-webkit-scrollbar {
   width: 6px;
@@ -93,6 +94,9 @@ main#home {
   overflow: hidden;
   position: relative;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 main#home h1 {
   color: #f1f3f8;
@@ -102,6 +106,47 @@ main#home img {
   position: absolute;
   width: 100%;
   z-index: -1;
+}
+main#gallery {
+  position: relative;
+  z-index: 1;
+}
+main#gallery #gallery-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  cursor: pointer;
+  height: 94%;
+}
+main#gallery #gallery-content .card-gallery {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+}
+main#gallery #gallery-content .card-gallery h3 {
+  transition: all ease 0.5s;
+  display: inline-flex;
+  border: 1px solid;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+main#gallery #gallery-content .card-gallery .image-content {
+  width: 221px;
+  height: 314px;
+  transition: all ease 0.5s;
+}
+main#gallery #gallery-content .card-gallery .image-content img {
+  width: 100%;
+  height: 100%;
+}
+main#gallery #gallery-content .card-gallery:hover h3 {
+  color: #f1f3f8;
+  background: #393b44;
+  box-shadow: 4px 4px 4px #393b44;
+}
+main#gallery #gallery-content .card-gallery:hover .image-content {
+  box-shadow: 4px 4px 4px #393b44;
 }
 
 footer {

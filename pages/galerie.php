@@ -27,7 +27,7 @@ include '../controller/header.html';
 		<div class="card-gallery">
 			<h3>couple</h3>
 			<span class="image-content">
-				<img src="../assets/image/couple.jpg" alt="couple>
+				<img src="../assets/image/couple.jpg" alt="couple">
 			</span>
 		</div>
 		
@@ -41,7 +41,7 @@ include '../controller/header.html';
 		<div class="card-gallery">
 			<h3>bébé</h3>
 			<span class="image-content">
-				<img src="../assets/image/baby.jpg" alt="bébé>
+				<img src="../assets/image/baby.jpg" alt="bébé">
 			</span>
 		</div>
 		
