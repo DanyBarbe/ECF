@@ -121,7 +121,6 @@ main{
       height: 100%;
     }
   }
-
   &#gallery{
     #gallery-content{
       height: 95vh;
@@ -156,7 +155,6 @@ main{
       }
     }
   }
-
   &#tarif{
     #tarif-content{
       height: 91.6vh;
@@ -198,7 +196,68 @@ main{
     }
   }
   &#contact{
-
+    position: relative;
+    form{
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      padding: .5rem;
+      transform: translate(-50%,-50%);
+      border: 1px solid $dark;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      width: 70%;
+      border-radius: 10px;
+      box-shadow: 10px 10px 10px $dark;
+      .required{
+        color: red;
+      }
+      span{
+        &:not(.text){
+          flex-direction: column;
+        }
+        &.text{
+          flex-direction: row;
+        }
+        display: flex;
+        align-items: center;
+        label{
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          &:after{
+            content : ':';
+            font-size: large;
+          }
+        }
+        input,textarea{
+          border: 1px solid $dark;
+          padding: .2rem;
+        }
+      }
+      button{
+        background: $send;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: .5rem;
+        border: 1px solid $dark;
+        color: $light;
+        gap: .5rem;
+        border-radius:10px;
+        .icon-content{
+          width: 1rem;
+          height: 1rem;
+          svg{
+            fill: $light;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
   }
 }
 
