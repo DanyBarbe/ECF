@@ -1,3 +1,301 @@
 @media (min-width: 1440px) {
 
 }
+
+body {
+  background: $light;
+}
+
+header, footer {
+  background: $accent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: uppercase;
+    color: $light;
+    gap: .5rem;
+    padding: .5rem .5rem .2rem .5rem;
+    border-bottom: 1px solid $light;
+    border-radius: 10px;
+    transition: all ease .5s;
+
+    &:hover {
+      box-shadow: 2px 2px 4px $light;
+    }
+
+    .icon-content {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: $light;
+      }
+    }
+  }
+}
+
+header {
+  #link-home {
+    width: 7%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+
+    a {
+
+
+    }
+  }
+
+  #hamburger {
+    display: none;
+  }
+}
+
+main {
+  height: 83.3vh;
+  overflow: auto;
+  h2{
+    text-align: center;
+    font-size:36px;
+    margin-bottom:.5rem;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+    background: $dark;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $light;
+  }
+
+  &#home {
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      color: $light;
+      font-size: 500%;
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  &#gallery{
+    position: relative;
+    z-index: 1;
+    #gallery-content{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      cursor: pointer;
+      height: 94%;
+      .card-gallery{
+        display: inline-flex;
+        flex-direction: column;
+        gap: .5rem;
+        align-items: center;
+        padding: .5rem;
+        h3{
+          transition: all ease .5s;
+          display: inline-flex;
+          border: 1px solid;
+          padding:.5rem;
+          border-radius: 10px
+        }
+        .image-content{
+          width: 221px;
+          height: 314px;
+          transition: all ease .5s;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &:hover{
+          h3{
+            color: $light;
+            background: $dark;
+            box-shadow: 4px 4px 4px $dark;
+          }
+          .image-content{
+            box-shadow: 4px 4px 4px $dark;
+          }
+        }
+      }
+    }
+  }
+
+  &#tarif{
+    #tarif-content{
+      display:grid;
+      grid-template-columns: repeat(2,1fr);
+      height: 94.4%;
+      .tarif-card{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+        padding-left:10rem;
+        .icon-content{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          svg{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .card-content{
+          display: flex;
+          flex-direction: column;
+          gap: .4rem;
+          h3{
+            font-size: xx-large;
+          }
+          .name-tarif{
+            display: flex;
+            align-items: center;
+            gap: .2rem;
+            &:before{
+              content:'«';
+            }
+            &:after{
+              content:'»';
+            }
+          }
+          p{
+            font-size: x-large;
+          }
+          .prix{
+            display: flex;
+            align-items: center;
+            gap: .1rem;
+            &:after{
+              content: '€';
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &#contact{
+    position: relative;
+    form{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      border:1px solid $dark;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 10px 10px 10px $dark;
+      gap: 1rem;
+      span:not(.text){
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        input,textarea{
+          border: 1px solid $dark;
+          padding: .2rem;
+        }
+        textarea{
+          margin-left:.5rem
+        }
+        label{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: .1rem;
+          &:after{
+            content: ':';
+            font-size: large;
+            margin-left: .5rem
+          }
+        }
+      }
+      .required{
+        font-size:large;
+        color: red;
+      }
+      .text{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        p{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      button{
+        background: $send;
+        color: $light;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+        padding:.5rem;
+        border-radius:10px;
+        cursor: pointer;
+        transition: all ease .5s;
+        &:hover{
+          box-shadow: 2px 2px 4px $send;
+          border-color: $light;
+        }
+        .icon-content{
+          width: 1rem;
+          height: 1rem;
+          svg{
+            fill: $light;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  color: $light;
+  padding: 1rem;
+  p {
+    font-size: large;
+  }
+}

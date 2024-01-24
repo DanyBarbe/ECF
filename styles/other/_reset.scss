@@ -1,13 +1,19 @@
-*{
+* {
   margin: 0;
   padding: 0;
   border: none;
   box-shadow: none;
   list-style: none;
+}
+
+a {
   text-decoration: none;
 }
 
-html{
+html {
   font-family: sans-serif;
 }
 
+h1, h2 {
+  font-family: 'Dancing Script', cursive;
+}
