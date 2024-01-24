@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 * {
   margin: 0;
@@ -170,6 +171,38 @@ main#gallery #gallery-content .card-gallery .image-content img {
   object-position: center center;
   height: 100%;
   width: 100%;
+}
+main#tarif #tarif-content {
+  height: 91.6vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+main#tarif #tarif-content .tarif-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+main#tarif #tarif-content .tarif-card .icon-content {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+}
+main#tarif #tarif-content .tarif-card .icon-content svg {
+  width: 100%;
+  height: 100%;
+}
+main#tarif #tarif-content .tarif-card .card-content .name-tarif:before {
+  content: "«";
+}
+main#tarif #tarif-content .tarif-card .card-content .name-tarif:after {
+  content: "»";
+}
+main#tarif #tarif-content .tarif-card .card-content .prix:after {
+  content: "€";
 }
 footer {
   padding: 0.5rem;
