@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 * {
   margin: 0;
@@ -20,32 +19,23 @@ h1, h2 {
   font-family: "Dancing Script", cursive;
 }
 
-body {
-  background: #f1f3f8;
-}
-
 header, footer {
   background: #47555E;
-  display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  padding: 0.5rem;
+  align-items: center;
+  display: flex;
+  color: #f1f3f8;
 }
 header a, footer a {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  text-transform: uppercase;
+  justify-content: space-around;
   color: #f1f3f8;
   gap: 0.5rem;
-  padding: 0.5rem 0.5rem 0.2rem 0.5rem;
   border-bottom: 1px solid #f1f3f8;
   border-radius: 10px;
-  transition: all ease 0.5s;
-}
-header a:hover, footer a:hover {
-  box-shadow: 2px 2px 4px #f1f3f8;
+  padding: 0.2rem;
 }
 header a .icon-content, footer a .icon-content {
   width: 1.5rem;
@@ -57,241 +47,106 @@ header a .icon-content svg, footer a .icon-content svg {
   fill: #f1f3f8;
 }
 
+header {
+  position: relative;
+  padding: 0 0.5rem;
+}
 header #link-home {
-  width: 7%;
+  border: none;
+  width: 20%;
 }
 header #link-home img {
   width: 100%;
   height: 100%;
 }
 header nav {
+  background: #47555E;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 50%;
+  gap: 2.5rem;
+  position: absolute;
+  right: 0;
+  top: 3.1rem;
+  z-index: 1;
+  padding: 0.5rem;
+  width: 0;
+  height: 0;
+  transform: scale(0);
+  transition: height ease 0.5s;
+}
+header nav.open {
+  height: 16rem;
+  width: 25%;
+  transform: scale(1);
 }
 header #hamburger {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+}
+header #hamburger span {
+  border-radius: 20px;
+  width: 100%;
+  height: 0.2rem;
+  background: #f1f3f8;
+  transform: scale(1);
+  transition: all ease 0.5s;
+}
+header #hamburger.active {
+  justify-content: center;
+  align-items: center;
+}
+header #hamburger.active span {
+  position: absolute;
+  transition: transform ease 0.5s;
+}
+header #hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+header #hamburger.active span:nth-child(2) {
+  width: 0;
+  height: 0;
+  transform: scale(0);
+}
+header #hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 main {
-  height: 83.3vh;
+  height: 93.6vh;
   overflow: auto;
-}
-main h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 0.5rem;
-}
-main::-webkit-scrollbar {
-  width: 6px;
-  background: #393b44;
-}
-main::-webkit-scrollbar-thumb {
-  background: #f1f3f8;
 }
 main#home {
   overflow: hidden;
   position: relative;
-  justify-content: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 main#home h1 {
   color: #f1f3f8;
-  font-size: 500%;
 }
 main#home img {
   position: absolute;
-  width: 100%;
   z-index: -1;
-}
-main#gallery {
-  position: relative;
-  z-index: 1;
-}
-main#gallery #gallery-content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  cursor: pointer;
-  height: 94%;
-}
-main#gallery #gallery-content .card-gallery {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
-  padding: 0.5rem;
-}
-main#gallery #gallery-content .card-gallery h3 {
-  transition: all ease 0.5s;
-  display: inline-flex;
-  border: 1px solid;
-  padding: 0.5rem;
-  border-radius: 10px;
-}
-main#gallery #gallery-content .card-gallery .image-content {
-  width: 221px;
-  height: 314px;
-  transition: all ease 0.5s;
-}
-main#gallery #gallery-content .card-gallery .image-content img {
-  width: 100%;
   height: 100%;
 }
-main#gallery #gallery-content .card-gallery:hover h3 {
-  color: #f1f3f8;
-  background: #393b44;
-  box-shadow: 4px 4px 4px #393b44;
-}
-main#gallery #gallery-content .card-gallery:hover .image-content {
-  box-shadow: 4px 4px 4px #393b44;
-}
-main#tarif #tarif-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 94.4%;
-}
-main#tarif #tarif-content .tarif-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  padding-left: 10rem;
-}
-main#tarif #tarif-content .tarif-card .icon-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-}
-main#tarif #tarif-content .tarif-card .icon-content svg {
-  width: 100%;
-  height: 100%;
-}
-main#tarif #tarif-content .tarif-card .card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-main#tarif #tarif-content .tarif-card .card-content h3 {
-  font-size: xx-large;
-}
-main#tarif #tarif-content .tarif-card .card-content .name-tarif {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-main#tarif #tarif-content .tarif-card .card-content .name-tarif:before {
-  content: "«";
-}
-main#tarif #tarif-content .tarif-card .card-content .name-tarif:after {
-  content: "»";
-}
-main#tarif #tarif-content .tarif-card .card-content p {
-  font-size: x-large;
-}
-main#tarif #tarif-content .tarif-card .card-content .prix {
-  display: flex;
-  align-items: center;
-  gap: 0.1rem;
-}
-main#tarif #tarif-content .tarif-card .card-content .prix:after {
-  content: "€";
-}
-main#contact {
-  position: relative;
-}
-main#contact form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border: 1px solid #393b44;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px #393b44;
-  gap: 1rem;
-}
-main#contact form span:not(.text) {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-main#contact form span:not(.text) input, main#contact form span:not(.text) textarea {
-  border: 1px solid #393b44;
-  padding: 0.2rem;
-}
-main#contact form span:not(.text) textarea {
-  margin-left: 0.5rem;
-}
-main#contact form span:not(.text) label {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.1rem;
-}
-main#contact form span:not(.text) label:after {
-  content: ":";
-  font-size: large;
-  margin-left: 0.5rem;
-}
-main#contact form .required {
-  font-size: large;
-  color: red;
-}
-main#contact form .text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-main#contact form .text p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-main#contact form button {
-  background: #008800;
-  color: #f1f3f8;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all ease 0.5s;
-}
-main#contact form button:hover {
-  box-shadow: 2px 2px 4px #008800;
-  border-color: #f1f3f8;
-}
-main#contact form button .icon-content {
-  width: 1rem;
-  height: 1rem;
-}
-main#contact form button .icon-content svg {
-  fill: #f1f3f8;
-  width: 100%;
-  height: 100%;
-}
-
 footer {
-  color: #f1f3f8;
-  padding: 1rem;
+  padding: 0.5rem;
+}
+footer a {
+  border: none;
+}
+footer a p {
+  display: none;
 }
 footer p {
-  font-size: large;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
