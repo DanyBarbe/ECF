@@ -1,275 +1,150 @@
 @media  screen and (max-width:575px){
+  header,footer{
+    a{
+      padding:.2rem;
+    }
+  }
 
-}
-
-header,footer{
-  background: $accent;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  color: $light;
-  a{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: $light;
-    gap: .5rem;
-    border-bottom: 1px solid $light;
-    border-radius: 10px;
-    padding:.2rem;
-    .icon-content{
-      width: 1.5rem;
-      height: 1.5rem;
-      svg{
+  header{
+    position: relative;
+    padding:0 .5rem;
+    #link-home{
+      border: none;
+      width: 20%;
+      img{
         width: 100%;
         height: 100%;
-        fill: $light;
       }
     }
-  }
-}
-
-header{
-  position: relative;
-  padding:0 .5rem;
-  #link-home{
-    border: none;
-    width: 20%;
-    img{
-      width: 100%;
-      height: 100%;
-    }
-  }
-  nav{
-    background: $accent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-    position: absolute;
-    right: 0;
-    top: 3.1rem;
-    z-index: 1;
-    padding: .5rem;
-    width: 0;
-    height:0;
-    transform: scale(0);
-    transition:height ease .5s;
-    &.open{
-      height: 16rem;
-      width: 25%;
-      transform: scale(1);
-    }
-  }
-  #hamburger{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 3rem;
-    height: 3rem;
-    position: relative;
-    span{
-      border-radius: 20px;
-      width: 100%;
-      height: .2rem;
-      background: $light;
-      transform: scale(1);
-      transition: all ease .5s;
-    }
-    &.active{
-      justify-content: center;
-      align-items: center;
-      span{
-        position: absolute;
-        transition: transform ease .5s;
-        &:nth-child(1){
-          transform: rotate(45deg);
-        }
-        &:nth-child(2){
-          width: 0;
-          height: 0;
-          transform: scale(0);
-        }
-        &:nth-child(3){
-          transform: rotate(-45deg);
-        }
-      }
-    }
-  }
-}
-
-main{
-  height:93.6vh;
-  overflow: auto;
-  h2{
-    text-align: center;
-  }
-  &#home{
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h1{
-      color: $light;
-    }
-    img{
+    nav{
+      @include display(column,space-between);
+      @include size(0);
       position: absolute;
-      z-index: -1;
-      height: 100%;
-    }
-  }
-  &#gallery{
-    #gallery-content{
-      height: 95vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      .card-gallery{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        gap: .5rem;
-        &:nth-child(2n){
-          flex-direction:row-reverse;
-        }
-        h3{
-          margin: 0 .2rem;
-          padding: .2rem;
-          border: 1px solid;
-          border-radius:10px
-        }
-        .image-content{
-          width: 100%;
-          height: 10rem;
-          img{
-            object-fit: cover;
-            object-position: center center;
-            height: 100%;
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-  &#tarif{
-    #tarif-content{
-      height: 91.6vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      .tarif-card{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: .5rem;
-        .icon-content{
-          width: 1rem;
-          height: 1rem;
-          margin-left:.5rem;
-          svg{
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .card-content{
-          .name-tarif{
-            &:before{
-              content:'«';
-            }
-            &:after{
-              content:'»';
-            }
-          }
-          .prix{
-            &:after{
-              content: '€';
-            }
-          }
-        }
-      }
-    }
-  }
-  &#contact{
-    position: relative;
-    form{
-      position: absolute;
-      top: 45%;
-      left: 50%;
+      gap: 2.5rem;
+      right: 0;
+      top: 3.1rem;
+      z-index: 1;
       padding: .5rem;
-      transform: translate(-50%,-50%);
-      border: 1px solid $dark;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .5rem;
-      width: 70%;
-      border-radius: 10px;
-      box-shadow: 10px 10px 10px $dark;
-      .required{
-        color: red;
+      transform: scale(0);
+      transition:height ease .5s;
+      &.open{
+        height: 16rem;
+        width: 25%;
+        transform: scale(1);
       }
+    }
+    #hamburger{
+      @include display(column,space-around);
+      @include size(3rem);
+      position: relative;
       span{
-        &:not(.text){
-          flex-direction: column;
-        }
-        &.text{
-          flex-direction: row;
-        }
-        display: flex;
+        background: $light;
+        border-radius: 20px;
+        width: 100%;
+        height: .2rem;
+        transform: scale(1);
+        transition: all ease .5s;
+      }
+      &.active{
+        justify-content: center;
         align-items: center;
-        label{
+        span{
+          position: absolute;
+          transition: transform ease .5s;
+          &:nth-child(1){
+            transform: rotate(45deg);
+          }
+          &:nth-child(2){
+            width: 0;
+            height: 0;
+            transform: scale(0);
+          }
+          &:nth-child(3){
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  main{
+    height:93.6vh;
+    &#home{
+      img{
+        height: 100%;
+      }
+    }
+    &#gallery{
+      #gallery-content{
+        @include display(column,space-around);
+        height: 95vh;
+        position:relative;
+        .card-gallery{
+          width: 100%;
           display: flex;
           align-items: center;
           flex-direction: row;
-          &:after{
-            content : ':';
-            font-size: large;
+          padding: .5rem 0;
+          &:nth-child(2n){
+            flex-direction:row-reverse;
           }
-        }
-        input,textarea{
-          border: 1px solid $dark;
-          padding: .2rem;
-        }
-      }
-      button{
-        background: $send;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: .5rem;
-        border: 1px solid $dark;
-        color: $light;
-        gap: .5rem;
-        border-radius:10px;
-        .icon-content{
-          width: 1rem;
-          height: 1rem;
-          svg{
-            fill: $light;
+          h3{
+            margin: 0 .2rem;
+            padding: .2rem;
+          }
+          .image-content{
             width: 100%;
-            height: 100%;
+            height: 10rem;
+          }
+        }
+      }
+    }
+    &#tarif{
+      #tarif-content{
+        height: 91.6vh;
+        @include display(column,space-around);
+        .tarif-card{
+          padding-left: 1rem;
+          width: 100%;
+          .icon-content{
+            @include size(1rem);
+            margin-left:.5rem;
+          }
+        }
+      }
+    }
+    &#contact{
+      form{
+        top: 45%;
+        left: 50%;
+        border: 1px solid $dark;
+        width: 70%;
+        span{
+          &:not(.text){
+            flex-direction: column;
+          }
+          &.text{
+            flex-direction: row;
+          }
+
+          input,textarea{
+            padding: .2rem;
           }
         }
       }
     }
   }
-}
 
-footer{
-  padding:.5rem;
-  a{
-    border: none;
-    p{
-      display: none;
+  footer{
+    padding:.5rem;
+    a{
+      border: none;
+      p{
+        display: none;
+      }
     }
-  }
-  p{
-    text-align: center;
+    p{
+      text-align: center;
+    }
   }
 }

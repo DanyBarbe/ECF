@@ -1,0 +1,153 @@
+body{
+  background: $light;
+}
+
+svg{
+  @include size(100%);
+}
+
+header,footer{
+  background: $accent;
+  @include display(row,space-between);
+  a{
+    @include display(row,space-around);
+    @include border-bottom($light,10px);
+    gap: .5rem;
+    color:$light;
+    .icon-content{
+      @include size(1.5rem);
+      svg{
+        fill:$light;
+      }
+    }
+  }
+}
+
+header{
+  background: $accent;
+  #link-home{
+    border: none;
+  }
+  nav{
+    background: $accent;
+  }
+}
+
+main{
+  overflow: auto;
+  h2{
+    text-align: center;
+  }
+  &#home{
+    overflow: hidden;
+    @include display(row,center);
+    h1{
+      color: $light;
+    }
+    img {
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+  &#gallery{
+    #gallery-content{
+      .card-gallery{
+        gap: .5rem;
+        h3{
+          @include border($dark,10px);
+        }
+        .image-content{
+          img{
+            @include size(100%);
+            object-fit: cover;
+            object-position: center center;
+          }
+        }
+      }
+    }
+  }
+  &#tarif{
+    #tarif-content{
+      .tarif-card{
+        @include display(row,flex-start);
+        gap:.5rem;
+        .icon-content{
+          @include display(row,center);
+        }
+        .card-content{
+          display: flex;
+          flex-direction: column;
+          gap: .4rem;
+          .name-tarif{
+            @include display(row,flex-start);
+            gap: .2rem;
+            &:before {
+              content: '«';
+            }
+
+            &:after {
+              content: '»';
+            }
+          }
+          .prix{
+            @include display(row,flex-start);
+            gap: .1rem;
+            &:after {
+              content: '€';
+            }
+          }
+        }
+      }
+    }
+  }
+  &#contact{
+    position: relative;
+    form{
+      position: absolute;
+      transform: translate(-50%, -50%);
+      padding: 1rem;
+      @include display(column,space-around);
+      @include border($dark,10px);
+      @include shadow(10px,10px,$dark);
+      gap: 1rem;
+      span{
+        @include display(row,flex-start);
+
+        input,textarea{
+          @include border($dark,0);
+        }
+        label{
+          @include display(row,center);
+          &:after{
+            content : ':';
+            font-size: large;
+          }
+        }
+      }
+      .required{
+        color:red;
+      }
+      button{
+        background: $send;
+        @include display(row,flex-start);
+        @include border($dark,10px);
+        gap: .5rem;
+        padding: .5rem;
+        color: $light;
+        .icon-content{
+          @include size(1rem);
+          svg{
+            fill:$light;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer{
+  color: $light;
+}

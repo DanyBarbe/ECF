@@ -1,0 +1,35 @@
+@mixin display($direction,$content){
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+  justify-content: $content;
+}
+
+@mixin border-bottom($color,$radius){
+  border-bottom: 1px solid $color;
+  border-radius: $radius;
+}
+
+@mixin border($color,$radius){
+  border: 1px solid $color;
+  border-radius: $radius;
+}
+
+@mixin size($size){
+  width: $size;
+  height: $size;
+}
+
+@mixin shadow($size,$blur,$color){
+  box-shadow: $size $size $blur $color;
+}
+
+@mixin scroll($color){
+  &::-webkit-scrollbar {
+    width: 6px;
+    background: $dark;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $light;
+  }
+}
