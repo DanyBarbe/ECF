@@ -1,3 +1,165 @@
 @media (min-width: 1440px) {
+  header, footer {
+    padding: .5rem;
 
+    a {
+      padding: .5rem .5rem .2rem .5rem;
+      transition: all ease .5s;
+
+      &:hover {
+        @include shadow(2px,4px,$light);
+      }
+    }
+  }
+
+  header {
+    #link-home {
+      width: 7%;
+
+      img {
+        @include size(100%);
+      }
+    }
+
+    nav {
+      @include display(row,space-between);
+      width: 50%;
+    }
+
+    #hamburger {
+      display: none;
+    }
+  }
+
+  main {
+    height: 83.4vh;
+    h2 {
+      font-size: 36px;
+      margin-bottom: .5rem;
+    }
+    @include scroll($dark);
+    &#home {
+      h1 {
+        font-size: 500%;
+      }
+    }
+
+    &#gallery {
+      #gallery-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        cursor: pointer;
+        height: 96.5vh;
+
+        .card-gallery {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: .5rem;
+
+          h3 {
+            transition: all ease .5s;
+            display: inline-flex;
+            padding: .5rem;
+          }
+
+          .image-content {
+            width: 221px;
+            height: 314px;
+            transition: all ease .5s;
+          }
+
+          &:hover {
+            h3 {
+              color: $light;
+              background: $dark;
+            }
+            h3,.image-content{
+              @include shadow(4px,4px,$dark);
+            }
+          }
+        }
+      }
+    }
+
+    &#tarif {
+      #tarif-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 94.4%;
+
+        .tarif-card {
+          padding-left: 10rem;
+          .icon-content {
+            @include size(2rem);
+          }
+
+          .card-content {
+            gap: .4rem;
+            h3 {
+              font-size: xx-large;
+            }
+            p {
+              font-size: x-large;
+            }
+          }
+        }
+      }
+    }
+
+    &#contact {
+      form {
+        top: 50%;
+        left: 50%;
+        span{
+          &:not(.text){
+            width: 100%;
+            justify-content: space-between;
+          }
+          &.text{
+            justify-content: center;
+
+            p {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          input, textarea {
+            padding: .2rem;
+          }
+
+          textarea {
+            margin-left: .5rem
+          }
+
+          label {
+            gap: .1rem;
+
+            &:after {
+              font-size: large;
+              margin-left: .5rem
+            }
+          }
+        }
+
+        button {
+          cursor: pointer;
+          transition: all ease .5s;
+
+          &:hover {
+            @include shadow(2px,4px,$send);
+            border-color: $light;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 1rem;
+    p {
+      font-size: large;
+    }
+  }
 }
